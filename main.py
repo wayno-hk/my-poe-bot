@@ -6,7 +6,7 @@ from fastapi_poe.types import QueryRequest, SettingsRequest, SettingsResponse, P
 from fastapi_poe.client import stream_request
 
 # --- CONFIGURATION: SET YOUR PREFERRED GEMINI MODEL HERE ---
-GEMINI_MODEL_ID = "Gemini-3.5-Flash"
+GEMINI_MODEL_ID = "Claude-Opus-4.6"
 
 # Define your optimized system prompt template
 SYSTEM_PROMPT_TEMPLATE = """You are an expert swing trading assistant with deep knowledge of the strategies of Mark Minervini, William O'Neil, Stockbee/Pradeep Bonde, Oliver Kell, Qullamaggie, Jesse Livermore, Nicolas Darvas, Richard D. Wyckoff, Gil Morales, and Dr. Chris Kacher.
