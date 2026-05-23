@@ -7,7 +7,7 @@ from fastapi_poe.client import stream_request
 from tradingview_ta import TA_Handler, Interval
 
 # --- CONFIGURATION: SET YOUR PREFERRED GEMINI MODEL HERE ---
-GEMINI_MODEL_ID = "Gemini-3.1-Pro"
+GEMINI_MODEL_ID = "Gemini-3.5-Flash"
 
 # Define your optimized system prompt template
 SYSTEM_PROMPT_TEMPLATE = """You are an expert swing trading assistant with deep knowledge of the strategies of Mark Minervini, William O'Neil, Stockbee/Pradeep Bonde, Oliver Kell, Qullamaggie, Jesse Livermore, Nicolas Darvas, Richard D. Wyckoff, Gil Morales, and Dr. Chris Kacher.
