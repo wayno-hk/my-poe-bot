@@ -1,8 +1,6 @@
 import re
 import modal
 import copy
-import yfinance as yf
-import pandas as pd
 from fastapi_poe import PoeBot, make_app
 from fastapi_poe.types import QueryRequest, SettingsRequest, SettingsResponse, ProtocolMessage
 from fastapi_poe.client import stream_request
@@ -37,6 +35,10 @@ Your behavior is strictly governed by the state of the conversation:
 
 def fetch_yfinance_data(ticker: str) -> str:
     """Fetches real-time technical analysis indicators from Yahoo Finance."""
+    # Move imports here so they are only loaded inside the remote container
+    import yfinance as yf
+    import pandas as pd
+    
     try:
         # Clean ticker name (remove $ sign if present)
         clean_ticker = ticker.strip().upper().replace("$", "")
@@ -174,7 +176,6 @@ class YahooFinanceBot(PoeBot):
         )
 
 # --- Modal Deployment Configuration ---
-# Swapped "tradingview-ta" dependency for "yfinance", "pandas", and "lxml"
 image = modal.Image.debian_slim().pip_install(
     "fastapi-poe==0.0.48", 
     "yfinance", 
